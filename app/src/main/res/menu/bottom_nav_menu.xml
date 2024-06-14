@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Calculator"
+        android:title="Calculator"
+        android:icon="@drawable/calculator_foreground"/>
+    <item
+        android:id="@+id/Courses"
+        android:title="My Learning"
+        android:icon="@drawable/noun_online_courses_6352182"/>
+    <item
+        android:id="@+id/FAQS"
+        android:title="FAQS"
+        android:icon="@drawable/faq_svgrepo_com"
+        />
+</menu>
