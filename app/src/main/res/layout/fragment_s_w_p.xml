@@ -165,12 +165,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expected Return Rate"
                     android:layout_marginBottom="30dp"
+                    android:text="Expected Return Rate"
                     android:textSize="18sp"
                     android:textStyle="bold">
 
                 </TextView>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -252,8 +253,6 @@
                         </EditText>
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 

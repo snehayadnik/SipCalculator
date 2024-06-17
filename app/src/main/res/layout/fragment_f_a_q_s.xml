@@ -23,8 +23,7 @@
                 android:layout_marginTop="32dp"
                 android:src="@drawable/faq_svgrepo_com__2_"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-            </ImageView>
+                app:layout_constraintTop_toTopOf="parent"></ImageView>
 
             <TextView
 
@@ -100,8 +99,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
                             android:fontFamily="@font/custom"
-                            android:text="What is an SIP ?"
                             android:padding="5dp"
+                            android:text="What is an SIP ?"
                             android:textSize="20sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="@id/fixed_layout1"
@@ -125,11 +124,11 @@
                         android:id="@+id/ans1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:justificationMode="inter_word"
                         android:padding="20dp"
                         android:text="Systematic Investment Plan or SIP is a method of investing in mutual funds wherein an investor chooses a mutual fund scheme and invests the fixed amount of his choice at fixed intervals.
 SIP investment plan is about investing a small amount over time rather than investing one-time huge amount resulting in a higher return."
                         android:textSize="20sp"
-                        android:justificationMode="inter_word"
                         android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -170,9 +169,9 @@ SIP investment plan is about investing a small amount over time rather than inve
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
                             android:fontFamily="@font/custom"
+                            android:padding="5dp"
                             android:text="How does an SIP work ?"
                             android:textSize="20sp"
-                            android:padding="5dp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -194,12 +193,12 @@ SIP investment plan is about investing a small amount over time rather than inve
                         android:id="@+id/ans2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:justificationMode="inter_word"
                         android:padding="20dp"
                         android:text="Once you apply for one or more SIP plans, the amount is automatically debited from your bank account and invested in the mutual funds you have purchased at the predetermined time interval.
 At the end of the day, you will be allocated the units of mutual funds depending on the NAV of the mutual fund."
                         android:textSize="20sp"
                         android:visibility="gone"
-                        android:justificationMode="inter_word"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -271,11 +270,11 @@ At the end of the day, you will be allocated the units of mutual funds depending
                         android:id="@+id/ans3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:justificationMode="inter_word"
                         android:padding="20dp"
                         android:text="Yes, you can customize your SIP. In fact, you can start with an amount as small as Rs. 500 (Rs. 6000 per year)"
                         android:textSize="20sp"
                         android:visibility="gone"
-                        android:justificationMode="inter_word"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -341,10 +340,10 @@ At the end of the day, you will be allocated the units of mutual funds depending
                         android:id="@+id/ans4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:justificationMode="inter_word"
                         android:padding="20dp"
                         android:text="According to expert fund managers, investment in any SIP gives fruitful returns only when it remains invested for five years and above. This minimum period ensures that losses if any, become minuscule. A longer tenure averages out the crests and troughs of the investment. On the other hand, shorter tenures can give you both high rewards and high risks."
                         android:textSize="20sp"
-                        android:justificationMode="inter_word"
                         android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -411,10 +410,10 @@ At the end of the day, you will be allocated the units of mutual funds depending
                         android:id="@+id/ans5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:justificationMode="inter_word"
                         android:padding="20dp"
                         android:text="Yes, you can change the SIP amount or tenure"
                         android:textSize="20sp"
-                        android:justificationMode="inter_word"
                         android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -480,10 +479,10 @@ At the end of the day, you will be allocated the units of mutual funds depending
                         android:id="@+id/ans6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:justificationMode="inter_word"
                         android:padding="20dp"
                         android:text="Currently there are four types of SIPs available for investment.\nTop up SIP: Top up SIP is a type of SIP investment where investors can gradually increase their SIP amount depending on the performance of the mutual fund.\nPerpetual SIP: Perpetual SIP do not have a fixed or pre-determined investment tenure. This means that investors may continue investing in mutual funds via perpetual SIP\nTrigger SIP: A trigger SIP is generally considered by seasoned investors who have a good understanding about mutual fund investment and market volatility.\nFlexible SIP: A flexible SIP is ideal for investors who face irregular cash flow. Investors who opt for flexible SIP can increase or decrease the monthly investment amount depending on the availability of funds."
                         android:textSize="20sp"
-                        android:justificationMode="inter_word"
                         android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -495,9 +494,3 @@ At the end of the day, you will be allocated the units of mutual funds depending
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </FrameLayout>
-
-
-<!--
-
-can i change sip amount or tenure
--->
