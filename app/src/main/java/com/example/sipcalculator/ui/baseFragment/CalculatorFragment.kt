@@ -1,15 +1,11 @@
-package com.example.sipcalculator.ui
+package com.example.sipcalculator.ui.baseFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.viewpager.widget.PagerAdapter
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
-import com.example.sipcalculator.R
-import com.example.sipcalculator.databinding.ActivityMainBinding
 import com.example.sipcalculator.databinding.FragmentCalculatorBinding
 import com.example.sipcalculator.ui.adapters.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
@@ -18,7 +14,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class CalculatorFragment : Fragment() {
     private lateinit var binding: FragmentCalculatorBinding
-private lateinit var viewPager:ViewPager2
+    private lateinit var viewPager: ViewPager2
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,25 +41,25 @@ private lateinit var viewPager:ViewPager2
                 else -> null
             }
         }.attach()
-      tabLayout.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener{
-          override fun onTabSelected(tab: TabLayout.Tab) {
-              viewPager.currentItem = tab.position
-          }
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                viewPager.currentItem = tab.position
+            }
 
-          override fun onTabUnselected(tab: TabLayout.Tab) {
-              // Handle tab unselected event if needed
-          }
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+                // Handle tab unselected event if needed
+            }
 
-          override fun onTabReselected(tab: TabLayout.Tab) {
-              // Handle tab reselected event if needed
-          }
-      })
-        viewPager.registerOnPageChangeCallback(object:ViewPager2.OnPageChangeCallback(){
+            override fun onTabReselected(tab: TabLayout.Tab) {
+                // Handle tab reselected event if needed
+            }
+        })
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 tabLayout.getTabAt(position)?.select()
             }
         })
-      }
-
     }
+
+}

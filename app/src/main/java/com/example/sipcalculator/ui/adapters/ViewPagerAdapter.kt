@@ -4,10 +4,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.sipcalculator.ui.LumpSumFragment
-import com.example.sipcalculator.ui.SIPFragment
-import com.example.sipcalculator.ui.SWPFragment
-import com.example.sipcalculator.ui.StepUpFragment
+import com.example.sipcalculator.ui.baseFragment.tabUi.LumpSumFragment
+import com.example.sipcalculator.ui.baseFragment.tabUi.SIPFragment
+import com.example.sipcalculator.ui.baseFragment.tabUi.SWPFragment
+import com.example.sipcalculator.ui.baseFragment.tabUi.StepUpFragment
 
 class ViewPagerAdapter (
 fragmentManager:FragmentManager,

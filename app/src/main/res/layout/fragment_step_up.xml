@@ -1,11 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+    <variable
+        name="viewModel"
+        type="com.example.sipcalculator.ui.viewModels.StepUpViewModel" />
+    </data>
+<FrameLayout
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SIPFragment">
+    tools:context=".ui.baseFragment.tabUi.SIPFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -115,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:fontFamily="@font/custom"
-                        android:text="4781227"
+                        android:text="0"
                         android:textColor="@color/black"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -156,7 +161,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp"
-                    android:text="Withdrawal Per\nMonth"
+                    android:text="Annual Step Up "
                     android:textSize="18sp"
                     android:textStyle="bold">
 
@@ -214,13 +219,13 @@
                         </EditText>
 
                         <EditText
-                            android:id="@+id/editTextWithdrawlStepUp"
+                            android:id="@+id/editTextAnnualStepUp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:hint="Withdrawl"
+                            android:layout_marginTop="8dp"
+                            android:hint="Step Up"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.586"
+                            app:layout_constraintHorizontal_bias="0.481"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/editTextAmtStepUp">
 
@@ -235,7 +240,7 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.529"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/editTextWithdrawlStepUp">
+                            app:layout_constraintTop_toBottomOf="@+id/editTextAnnualStepUp">
 
                         </EditText>
 
@@ -243,12 +248,11 @@
                             android:id="@+id/editTextTimeStepUp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
+                            android:layout_marginTop="112dp"
                             android:hint="Months"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.486"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/editTextRateStepUp">
+                            app:layout_constraintStart_toStartOf="parent">
 
                         </EditText>
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -280,7 +284,8 @@
 
         </com.google.android.material.button.MaterialButton>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout><!--
+</FrameLayout>
+</layout><!--
 
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"

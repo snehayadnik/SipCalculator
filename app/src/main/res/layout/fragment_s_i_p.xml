@@ -1,11 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+    name="viewModel"
+    type="com.example.sipcalculator.ui.viewModels.SIPViewModel" />
+    </data>
+
+<FrameLayout
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SIPFragment">
+    tools:context=".ui.baseFragment.tabUi.SIPFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -44,7 +50,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:padding="15dp">
+                    android:padding="10dp">
 
                     <TextView
                         android:id="@+id/invamt"
@@ -125,16 +131,15 @@
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
+            android:id="@+id/linearLayout4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/CalulateSIPbutton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView"
-            app:layout_constraintVertical_bias="0.065">
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -186,58 +191,58 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.495">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <EditText
-                        android:id="@+id/editTextAmt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:hint="Amount"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        <EditText
+                            android:id="@+id/editTextAmt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:hint="Amount"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
 
-                    </EditText>
+                        </EditText>
 
-                    <EditText
-                        android:id="@+id/editTextRate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:hint="Return %"
-                        app:layout_constraintBottom_toTopOf="@+id/editTextTime"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/editTextAmt"
-                        app:layout_constraintVertical_bias="0.508">
+                        <EditText
+                            android:id="@+id/editTextRate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:hint="Return %"
+                            app:layout_constraintBottom_toTopOf="@+id/editTextTime"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/editTextAmt"
+                            app:layout_constraintVertical_bias="0.508">
 
-                    </EditText>
+                        </EditText>
 
-                    <EditText
-                        android:id="@+id/editTextTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginBottom="4dp"
-                        android:hint="Months"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent">
+                        <EditText
+                            android:id="@+id/editTextTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginBottom="4dp"
+                            android:hint="Months"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
 
-                    </EditText>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-        </LinearLayout>
+                        </EditText>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/CalulateSIPbutton"
+            android:id="@+id/calculateSIPButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -252,8 +257,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+            app:layout_constraintVertical_bias="0.942">
 
         </com.google.android.material.button.MaterialButton>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
+</layout>

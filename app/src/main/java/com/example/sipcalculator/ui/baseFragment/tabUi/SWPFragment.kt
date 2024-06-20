@@ -1,4 +1,4 @@
-package com.example.sipcalculator.ui
+package com.example.sipcalculator.ui.baseFragment.tabUi
 
 import android.graphics.Color
 import android.os.Bundle
@@ -9,7 +9,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.example.sipcalculator.databinding.FragmentSWPBinding
+import com.example.sipcalculator.databinding.FragmentStepUpBinding
+import com.example.sipcalculator.ui.viewModels.StepUpViewModel
 import org.eazegraph.lib.charts.PieChart
 import org.eazegraph.lib.models.PieModel
 
@@ -31,66 +35,59 @@ class SWPFragment : Fragment() {
     private var enteredAmt: Int = 0
 
 
+    private val viewModel: StepUpViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSWPBinding.inflate(inflater, container, false)
+        binding = FragmentSWPBinding.inflate(inflater, container, false).apply{
+            lifecycleOwner=viewLifecycleOwner
+            viewModel=this@SWPFragment.viewModel
+        }
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.apply {
-            investment = invAmtSWP
-            estimated = estAmtSWP
-            pieChart = SWPPiechart
-            inputAmount = editTextAmtSWP
-            inputReturnRate = editTextRateSWP
-            inputTime = editTextTimeSWP
-            calculateBtn = calculateButtonSWP
-            calculatedReturnsText = totalInvSWP
 
+        binding.calculateButtonSWP.setOnClickListener {
+            val enteredAmt = binding.editTextAmtSWP.text.toString().toInt()
+            val enteredRate = binding.editTextRateSWP.text.toString().toInt()
+            val enteredTime = binding.editTextTimeSWP.text.toString().toInt()
+            val enteredStepUp = binding.editTextWithdrawlSWP.text.toString().toInt()
+            viewModel.calculateStepUp(enteredAmt,enteredRate,enteredTime,enteredStepUp)
         }
-
-setData()
-        calculateBtn.setOnClickListener {
-            enteredAmt = Integer.parseInt(inputAmount.text.toString())
-            val enteredRate: Int = Integer.parseInt(inputReturnRate.text.toString())
-            val enteredTime: Int = Integer.parseInt(inputTime.text.toString())
-            calculatedAmt =
-                ((enteredAmt * ((((1 + enteredRate) * enteredTime) - 1) / enteredRate) * (1 + enteredRate)).toDouble()).toInt()
-            invAmount = enteredAmt * enteredTime
-            val totalInv = invAmount + calculatedAmt
-            calculatedReturnsText.text = totalInv.toString()
-            setData()
-        }
+        viewModel.investmentAmount.observe(viewLifecycleOwner, Observer{
+            binding.invAmtSWP.text=it.toString()
+        })
+        viewModel.estimatedAmount.observe(viewLifecycleOwner,Observer{
+            binding.estAmtSWP.text=it.toString()
+        })
+        viewModel.calculatedReturns.observe(viewLifecycleOwner,Observer{
+            binding.totalInvSWP.text=it.toString()
+        })
     }
 
 
-    private fun setData() {
-        investment.text = invAmount.toString()
-        estimated.text = calculatedAmt.toString()
-
-
-        // Set the data and color to the pie chart
-        pieChart.addPieSlice(
+    private fun setData(estimatedAmount:Int) {
+        val investedAmount=viewModel.investmentAmount.value?:0
+        binding.SWPPiechart.clearChart()
+        binding.SWPPiechart.addPieSlice(
             PieModel(
                 "Invested Amount",
-                Integer.parseInt(investment.text.toString()).toFloat(),
+                investedAmount.toFloat(),
                 Color.parseColor("#FCD828")
             )
         )
-        pieChart.addPieSlice(
-            PieModel(
-                "Estimated Amount",
-                Integer.parseInt(estimated.text.toString()).toFloat(),
+        binding.SWPPiechart.addPieSlice(
+            PieModel( "Estimated Amount",
+                estimatedAmount.toFloat(),
                 Color.parseColor("#1A7CC8")
+
             )
         )
-
-        // To animate the pie chart
-        pieChart.startAnimation()
+        binding.SWPPiechart.startAnimation()
     }
 }
 /*
