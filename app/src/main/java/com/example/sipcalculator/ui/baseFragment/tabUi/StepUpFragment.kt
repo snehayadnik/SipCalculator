@@ -43,6 +43,7 @@ class StepUpFragment : Fragment() {
         })
         viewModel.estimatedAmount.observe(viewLifecycleOwner,Observer{
             binding.estAmtStepUp.text=it.toString()
+            setData(it)
         })
         viewModel.calculatedReturns.observe(viewLifecycleOwner,Observer{
             binding.totalInvStepUp.text=it.toString()

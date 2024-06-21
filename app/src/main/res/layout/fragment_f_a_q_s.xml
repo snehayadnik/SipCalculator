@@ -23,7 +23,9 @@
                 android:layout_marginTop="32dp"
                 android:src="@drawable/faq_svgrepo_com__2_"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></ImageView>
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
 
             <TextView
 
@@ -240,19 +242,20 @@ At the end of the day, you will be allocated the units of mutual funds depending
 
                         <TextView
                             android:id="@+id/q3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
+                            android:layout_width="297dp"
+                            android:layout_height="67dp"
+                            android:layout_marginStart="10dp"
                             android:fontFamily="@font/custom"
                             android:padding="5dp"
                             android:text="Can I start SIPs with a small amount ?"
                             android:textSize="20sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.496"
+                            app:layout_constraintEnd_toStartOf="@id/arrow_button3"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
 
                         <ImageView
                             android:id="@+id/arrow_button3"
@@ -262,8 +265,7 @@ At the end of the day, you will be allocated the units of mutual funds depending
                             android:src="@drawable/caret_down_arrow_south_svgrepo_com"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.046" />
+                            app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
@@ -310,12 +312,12 @@ At the end of the day, you will be allocated the units of mutual funds depending
 
                         <TextView
                             android:id="@+id/q4"
-                            android:layout_width="292dp"
-                            android:layout_height="64dp"
+                            android:layout_width="297dp"
+                            android:layout_height="65dp"
                             android:layout_margin="16dp"
                             android:fontFamily="@font/custom"
                             android:padding="5dp"
-                            android:text="What is the ideal duration for investing in SIPs ?"
+                            android:text="What is the ideal duration\nfor investing in SIPs ?"
                             android:textSize="20sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -332,8 +334,7 @@ At the end of the day, you will be allocated the units of mutual funds depending
                             android:src="@drawable/caret_down_arrow_south_svgrepo_com"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.046" />
+                            app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
@@ -380,17 +381,17 @@ At the end of the day, you will be allocated the units of mutual funds depending
 
                         <TextView
                             android:id="@+id/q5"
-                            android:layout_width="290dp"
-                            android:layout_height="63dp"
+                            android:layout_width="288dp"
+                            android:layout_height="67dp"
                             android:layout_marginStart="16dp"
                             android:fontFamily="@font/custom"
                             android:padding="5dp"
-                            android:text="Can I change the SIP amount or tenure ?"
+                            android:text="Can I change the SIP\namount or tenure ?"
                             android:textSize="20sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@id/arrow_button5"
-                            app:layout_constraintHorizontal_bias="0.222"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.0" />
@@ -452,17 +453,19 @@ At the end of the day, you will be allocated the units of mutual funds depending
                         <TextView
                             android:id="@+id/q6"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
                             android:fontFamily="@font/custom"
                             android:padding="5dp"
                             android:text="What are the different types\nof SIPs in the market ?"
                             android:textSize="20sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/arrow_button6"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="1.0" />
+                            app:layout_constraintVertical_bias="0.0" />
 
                         <ImageView
                             android:id="@+id/arrow_button6"

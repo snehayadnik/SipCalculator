@@ -17,13 +17,15 @@ class SWPViewModel:ViewModel() {
 
         fun calculateSWP(amount: Int, rate: Int, time: Int,withdrawl:Int) {
             var futureVal: Double
-            val ratePercent=rate/100
-            var principal=amount
-            futureVal=principal* (1 + ratePercent).toDouble().pow(time.toDouble()) -withdrawl*((1 + ratePercent).toDouble()
-                .pow(time.toDouble() - 1))/ratePercent
+            val ratePercent=(rate/100.0)/12.0
+            /*var a= amount* ((1+ratePercent).pow(time))
+            var b= withdrawl * (((((1+ratePercent).pow(time))-1))/ratePercent)*/
+            futureVal= amount * (1 + ratePercent).pow(time) -
+                    withdrawl * ((1 + ratePercent).pow(time) - 1) / ratePercent
+
             val calculatedAmt = futureVal.toInt()
-            _investmentAmount.value = principal
+            _investmentAmount.value = amount
             _estimatedAmount.value = calculatedAmt
-            _calculatedReturns.value = 0
+            _calculatedReturns.value = calculatedAmt-amount
         }
     }

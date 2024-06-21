@@ -71,7 +71,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:fontFamily="@font/custom"
-                        android:text="4781227"
+                        android:text="0"
                         android:textColor="@color/black"
                         android:textSize="15sp"
                         android:textStyle="bold">
@@ -97,7 +97,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
                         android:fontFamily="@font/custom"
-                        android:text="4781227"
+                        android:text="0"
                         android:textColor="@color/black"
                         android:textSize="15sp"
                         android:textStyle="bold" />

@@ -12,8 +12,7 @@ import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.sipcalculator.databinding.FragmentSWPBinding
-import com.example.sipcalculator.databinding.FragmentStepUpBinding
-import com.example.sipcalculator.ui.viewModels.StepUpViewModel
+import com.example.sipcalculator.ui.viewModels.SWPViewModel
 import org.eazegraph.lib.charts.PieChart
 import org.eazegraph.lib.models.PieModel
 
@@ -35,7 +34,7 @@ class SWPFragment : Fragment() {
     private var enteredAmt: Int = 0
 
 
-    private val viewModel: StepUpViewModel by viewModels()
+    private val viewModel: SWPViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,14 +54,15 @@ class SWPFragment : Fragment() {
             val enteredAmt = binding.editTextAmtSWP.text.toString().toInt()
             val enteredRate = binding.editTextRateSWP.text.toString().toInt()
             val enteredTime = binding.editTextTimeSWP.text.toString().toInt()
-            val enteredStepUp = binding.editTextWithdrawlSWP.text.toString().toInt()
-            viewModel.calculateStepUp(enteredAmt,enteredRate,enteredTime,enteredStepUp)
+            val enteredWithdrawl = binding.editTextWithdrawlSWP.text.toString().toInt()
+            viewModel.calculateSWP(enteredAmt,enteredRate,enteredTime,enteredWithdrawl)
         }
         viewModel.investmentAmount.observe(viewLifecycleOwner, Observer{
             binding.invAmtSWP.text=it.toString()
         })
         viewModel.estimatedAmount.observe(viewLifecycleOwner,Observer{
             binding.estAmtSWP.text=it.toString()
+            setData(it)
         })
         viewModel.calculatedReturns.observe(viewLifecycleOwner,Observer{
             binding.totalInvSWP.text=it.toString()

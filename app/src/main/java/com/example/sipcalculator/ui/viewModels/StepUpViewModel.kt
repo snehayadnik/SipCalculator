@@ -17,18 +17,20 @@ class StepUpViewModel: ViewModel() {
 
     fun calculateStepUp(amount: Int, rate: Int, time: Int,stepUp:Int) {
         var futureVal=0.0
-        val monthlyRate=rate/12
-        var currentSIPAmount=amount
+        var invested=0.0
+        val monthlyRate=(rate/100.0)/12.0
+        val stepUpRate=stepUp/100.0
+        var currentInvestment:Double
         for(i in 1..time){
-            futureVal+=currentSIPAmount* ((1 + monthlyRate / 100.0).pow(time - i))
-            if(i%12==0)
-            {
-                currentSIPAmount*=1+(stepUp/100)
-            }
+            currentInvestment=amount * ((1+stepUpRate).pow(i/12))
+            futureVal+=currentInvestment * ((1+monthlyRate).pow(time-i))
+            invested+=currentInvestment
         }
         val calculatedAmt = futureVal.toInt()
-        _investmentAmount.value = currentSIPAmount
-        _estimatedAmount.value = calculatedAmt
-        _calculatedReturns.value = 0
+        _investmentAmount.value = invested.toInt()
+        _estimatedAmount.value = (calculatedAmt-invested).toInt()
+        _calculatedReturns.value = calculatedAmt
     }
 }
+
+
