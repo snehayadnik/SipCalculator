@@ -60,11 +60,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:layout_marginBottom="5dp"
-                            android:fontFamily="@font/custom"
-                            android:text="Invested Amount"
-                            android:textColor="@color/darkestyellow"
-                            android:textSize="15sp"
-                            android:textStyle="bold">
+                            style="@style/InvestedAmount">
 
                         </TextView>
 
@@ -73,11 +69,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="20dp"
-                            android:fontFamily="@font/custom"
-                            android:text="0"
-                            android:textColor="@color/black"
-                            android:textSize="15sp"
-                            android:textStyle="bold">
+                            style="@style/zero">
 
                         </TextView>
 
@@ -86,11 +78,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:fontFamily="@font/custom"
-                            android:text="Estimated Returns"
-                            android:textColor="@color/buttonBlue"
-                            android:textSize="15sp"
-                            android:textStyle="bold">
+                            style="@style/EstimatedAmount">
 
                         </TextView>
 
@@ -99,21 +87,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
-                            android:fontFamily="@font/custom"
-                            android:text="0"
-                            android:textColor="@color/black"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
+                            style="@style/zero" />
 
                         <TextView
                             android:id="@+id/totalamt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/custom"
-                            android:text="Total Value"
-                            android:textColor="@color/grey"
-                            android:textSize="15sp"
-                            android:textStyle="bold">
+                            style="@style/TotalInvestment">
 
                         </TextView>
 
@@ -122,11 +102,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="20dp"
-                            android:fontFamily="@font/custom"
-                            android:text="0"
-                            android:textColor="@color/black"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
+                            style="@style/zero" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -154,9 +130,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
-                        android:text="Monthly\nInstallment"
-                        android:textSize="18sp"
-                        android:textStyle="bold">
+                        style="@style/MonthlyInstallmentText">
 
                     </TextView>
 
@@ -164,18 +138,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
-                        android:text="Expected Return\nRate"
-                        android:textSize="18sp"
-                        android:textStyle="bold">
+                        style="@style/ReturnRate">
 
                     </TextView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Time Period"
-                        android:textSize="18sp"
-                        android:textStyle="bold">
+                        style="@style/Time">
 
                     </TextView>
                 </LinearLayout>
@@ -220,10 +190,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
                                 android:layout_centerVertical="true"
-                                android:layout_marginTop="28dp"
+                                android:layout_marginTop="8dp"
                                 android:hint="Return %"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.531"
+                                app:layout_constraintHorizontal_bias="0.525"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/editTextAmtLumpsum">
 
@@ -238,6 +208,7 @@
                                 android:hint="Years"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.421"
                                 app:layout_constraintStart_toStartOf="parent">
 
                             </EditText>

@@ -70,11 +70,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:fontFamily="@font/custom"
-                        android:text="0"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold">
+                        style="@style/zero">
 
                     </TextView>
 
@@ -84,7 +80,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:fontFamily="@font/custom"
-                        android:text="Estimated Returns"
+                        android:text="Amount Withdrawn"
                         android:textColor="@color/buttonBlue"
                         android:textSize="15sp"
                         android:textStyle="bold">
@@ -96,11 +92,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
-                        android:fontFamily="@font/custom"
-                        android:text="0"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                        style="@style/zero" />
 
                     <TextView
                         android:id="@+id/totalamt"
@@ -119,11 +111,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:fontFamily="@font/custom"
-                        android:text="0"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                        style="@style/zero" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -150,9 +138,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp"
-                    android:text="Monthly Installment"
-                    android:textSize="18sp"
-                    android:textStyle="bold">
+                    style="@style/MonthlyInstallmentText">
 
                 </TextView>
 
@@ -170,18 +156,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp"
-                    android:text="Expected Return Rate"
-                    android:textSize="18sp"
-                    android:textStyle="bold">
+                    style="@style/ReturnRate">
 
                 </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Time Period"
-                    android:textSize="18sp"
-                    android:textStyle="bold">
+                    style="@style/Time">
 
                 </TextView>
             </LinearLayout>
@@ -209,22 +191,24 @@
                             android:id="@+id/editTextAmtSWP"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
                             android:hint="Amount"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.416"
+                            app:layout_constraintHorizontal_bias="0.514"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
                         </EditText>
 
+
                         <EditText
                             android:id="@+id/editTextWithdrawlSWP"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
+                            android:layout_marginTop="12dp"
                             android:hint="Withdrawl"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.489"
+                            app:layout_constraintHorizontal_bias="0.609"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/editTextAmtSWP">
 
@@ -234,10 +218,10 @@
                             android:id="@+id/editTextRateSWP"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="12dp"
                             android:hint="Return %"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.47"
+                            app:layout_constraintHorizontal_bias="0.546"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/editTextWithdrawlSWP">
 
@@ -247,10 +231,9 @@
                             android:id="@+id/editTextTimeSWP"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="16dp"
                             android:hint="Months"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.432"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/editTextRateSWP">
 

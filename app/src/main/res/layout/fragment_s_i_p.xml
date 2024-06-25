@@ -13,6 +13,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.baseFragment.tabUi.SIPFragment">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -58,11 +59,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/custom"
-                        android:text="Invested Amount"
-                        android:textColor="@color/darkestyellow"
-                        android:textSize="15sp"
-                        android:textStyle="bold">
+                        style="@style/InvestedAmount">
 
                     </TextView>
 
@@ -71,11 +68,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:fontFamily="@font/custom"
-                        android:text="0"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold">
+                        style="@style/zero">
 
                     </TextView>
 
@@ -84,11 +77,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/custom"
-                        android:text="Estimated Returns"
-                        android:textColor="@color/buttonBlue"
-                        android:textSize="15sp"
-                        android:textStyle="bold">
+                       style="@style/EstimatedAmount">
 
                     </TextView>
 
@@ -97,21 +86,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
-                        android:fontFamily="@font/custom"
-                        android:text="0"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                        style="@style/zero" />
 
                     <TextView
                         android:id="@+id/totalamt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/custom"
-                        android:text="Total Value"
-                        android:textColor="@color/grey"
-                        android:textSize="15sp"
-                        android:textStyle="bold">
+                        style="@style/TotalInvestment">
 
                     </TextView>
 
@@ -120,11 +101,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:fontFamily="@font/custom"
-                        android:text="0"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                        style="@style/zero" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -137,9 +114,10 @@
             android:layout_margin="20dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView">
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:layout_constraintVertical_bias="0.128">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -148,31 +126,25 @@
                 android:orientation="vertical">
 
                 <TextView
+                    style="@style/MonthlyInstallmentText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="30dp"
-                    android:text="Monthly\nInstallment"
-                    android:textSize="18sp"
-                    android:textStyle="bold">
+                    android:layout_marginBottom="30dp">
 
                 </TextView>
 
                 <TextView
+                    style="@style/ReturnRate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="30dp"
-                    android:text="Expected Return\nRate"
-                    android:textSize="18sp"
-                    android:textStyle="bold">
+                    android:layout_marginBottom="30dp">
 
                 </TextView>
 
                 <TextView
+                    style="@style/Time"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Time Period"
-                    android:textSize="18sp"
-                    android:textStyle="bold">
+                    android:layout_height="wrap_content">
 
                 </TextView>
             </LinearLayout>
@@ -217,9 +189,10 @@
                             android:hint="Return %"
                             app:layout_constraintBottom_toTopOf="@+id/editTextTime"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.546"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/editTextAmt"
-                            app:layout_constraintVertical_bias="0.508">
+                            app:layout_constraintVertical_bias="0.692">
 
                         </EditText>
 

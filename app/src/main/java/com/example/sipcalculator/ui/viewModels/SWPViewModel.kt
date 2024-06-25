@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlin.math.pow
+import kotlin.time.times
 
 class SWPViewModel:ViewModel() {
         private val _investmentAmount = MutableLiveData<Int>()
@@ -15,17 +16,25 @@ class SWPViewModel:ViewModel() {
         private val _calculatedReturns = MutableLiveData<Int>()
         val calculatedReturns: LiveData<Int> = _calculatedReturns
 
-        fun calculateSWP(amount: Int, rate: Int, time: Int,withdrawl:Int) {
-            var futureVal: Double
-            val ratePercent=(rate/100.0)/12.0
-            /*var a= amount* ((1+ratePercent).pow(time))
-            var b= withdrawl * (((((1+ratePercent).pow(time))-1))/ratePercent)*/
-            futureVal= amount * (1 + ratePercent).pow(time) -
-                    withdrawl * ((1 + ratePercent).pow(time) - 1) / ratePercent
+        fun calculateSWP(amount: Int ,rate: Int, time: Int,withdrawl:Int) {
+            var futureVal=0.0
+            var corpus=amount.toDouble()
+            val monthlyRate:Double=((rate/100.0)/12)
+            for(i in 1..time){
+                val interestEarned=corpus * monthlyRate
+                corpus+=interestEarned
+                corpus-=withdrawl
+                futureVal+=withdrawl.toDouble()
 
-            val calculatedAmt = futureVal.toInt()
+                if(corpus<=0)
+                {
+                    corpus=0.0
+                    break
+                }
+            }
+            val calculatedAmt =corpus
             _investmentAmount.value = amount
-            _estimatedAmount.value = calculatedAmt
-            _calculatedReturns.value = calculatedAmt-amount
+            _estimatedAmount.value = futureVal.toInt()
+            _calculatedReturns.value = calculatedAmt.toInt()
         }
     }
